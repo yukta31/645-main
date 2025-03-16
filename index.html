@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survey Form</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            margin: 0;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label, p {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: #555;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .custom-checkbox, .custom-radio {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px 0;
+        }
+        input[type="checkbox"], input[type="radio"] {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #6e8efb;
+            border-radius: 4px;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+        }
+        input[type="radio"] {
+            border-radius: 50%;
+        }
+        input[type="checkbox"]:checked::before,
+        input[type="radio"]:checked::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background: #6e8efb;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 48%;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        button[type="reset"] {
+            background: #dc3545;
+        }
+        button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Survey Form</h2>
+        <form action="#" method="post">
+            <label>First Name: <input type="text" name="first_name" required></label>
+            <label>Last Name: <input type="text" name="last_name" required></label>
+            <label>Street Address: <input type="text" name="street_address" required></label>
+            <label>City: <input type="text" name="city" required></label>
+            <label>State: <input type="text" name="state" required></label>
+            <label>Zip: <input type="text" name="zip" required></label>
+            <label>Telephone Number: <input type="tel" name="telephone" required></label>
+            <label>Email: <input type="email" name="email" required></label>
+            <label>Date of Survey: <input type="date" name="survey_date" required></label>
+            
+            <p>What did you like most about the campus?</p>
+            <div class="custom-checkbox"><input type="checkbox" name="liked_most" value="students"> Students</div>
+            <div class="custom-checkbox"><input type="checkbox" name="liked_most" value="location"> Location</div>
+            <div class="custom-checkbox"><input type="checkbox" name="liked_most" value="campus"> Campus</div>
+            <div class="custom-checkbox"><input type="checkbox" name="liked_most" value="atmosphere"> Atmosphere</div>
+            <div class="custom-checkbox"><input type="checkbox" name="liked_most" value="dorm_rooms"> Dorm Rooms</div>
+            <div class="custom-checkbox"><input type="checkbox" name="liked_most" value="sports"> Sports</div>
+            
+            <p>How did you become interested in the university?</p>
+            <div class="custom-radio"><input type="radio" name="interest_source" value="friends" required> Friends</div>
+            <div class="custom-radio"><input type="radio" name="interest_source" value="television"> Television</div>
+            <div class="custom-radio"><input type="radio" name="interest_source" value="internet"> Internet</div>
+            <div class="custom-radio"><input type="radio" name="interest_source" value="other"> Other</div>
+            
+            <label>Likelihood of recommending this school:
+                <select name="recommendation">
+                    <option value="very_likely">Very Likely</option>
+                    <option value="likely">Likely</option>
+                    <option value="unlikely">Unlikely</option>
+                </select>
+            </label>
+            
+            <label>Raffle (Enter at least 10 comma-separated numbers between 1-100):
+                <input type="text" name="raffle" pattern="([1-9][0-9]?,){9,}[1-9][0-9]?" required>
+            </label>
+            
+            <label>Additional Comments:</label>
+            <textarea name="comments" rows="4" cols="50"></textarea>
+            
+            <div class="button-group">
+                <button type="submit">Submit</button>
+                <button type="reset">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
